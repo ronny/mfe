@@ -14,7 +14,7 @@ interesting things with minimal setup and configuration.
 - [Webpack] with hot module replacement, react-hot-loader, and
   sourcemaps in development
 - [React] with JSX support
-- [Flux] with [Mori]
+- [Flux] with [Immutable]
 - [react-router]
 - [autoprefixer]
 - Modern testing: [Karma], [Mocha], [Chai]
@@ -25,7 +25,7 @@ interesting things with minimal setup and configuration.
 [Babel]: https://babeljs.io
 [React]: http://facebook.github.io/react/
 [Flux]: https://facebook.github.io/flux/
-[Mori]: http://swannodette.github.io/mori/
+[Immutable]: https://facebook.github.io/immutable-js/
 [react-router]: https://github.com/rackt/react-router
 [Webpack]: http://webpack.github.io
 [eslint]: http://eslint.org
@@ -57,3 +57,14 @@ To run eslint against the `src` directory:
 ```sh
 npm run lint
 ```
+
+## Credits
+
+This project is only possible with the help of many people.
+
+Thank you to the maintainers and contributors of the following projects:
+
+- [https://github.com/gpbl/isomorphic500](https://github.com/gpbl/isomorphic500)
+
+And thank you to all the maintainers and contributors of the wonderful tools
+being used by this project.
