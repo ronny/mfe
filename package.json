@@ -1,0 +1,39 @@
+{
+  "name": "mfe-template",
+  "version": "0.0.1",
+  "description": "A template for modern front-end projects.",
+  "scripts": {
+    "build": "webpack --stats --progress --config ./webpack/prod.config.js",
+    "postinstall": "npm run build",
+    "lint": "eslint src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ronny/mfe-template.git"
+  },
+  "keywords": [
+    "template",
+    "react",
+    "webpack",
+    "flux",
+    "babel",
+    "isomorphic"
+  ],
+  "author": "Ronny Haryanto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ronny/mfe-template/issues"
+  },
+  "engines": {
+    "node": "0.12.x"
+  },
+  "homepage": "https://github.com/ronny/mfe-template#readme",
+  "devDependencies": {
+    "babel-core": "^5.6.15",
+    "babel-eslint": "^3.1.19",
+    "babel-loader": "^5.2.2",
+    "node-libs-browser": "^0.5.2",
+    "webpack": "^1.10.0"
+  }
+}
