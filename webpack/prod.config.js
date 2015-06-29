@@ -21,7 +21,9 @@ module.exports = {
     loaders: [
       { test: /\.(jpe?g|png|gif|svg|ico)$/, loader: "file" },
       { test: /\.js$/, exclude: /node_modules/, loaders: [strip.loader("debug"), "babel"] },
-      { test: /\.(sass|scss)$/, loader: ExtractTextPlugin.extract("style", "css!autoprefixer?browsers=last 2 version!sass") }
+      // { test: /\.css$/, loader: "style-loader!css-loader" },
+      // { test: /\.scss$/, loader: ExtractTextPlugin.extract("style", "css!autoprefixer?browsers=last 2 version!sass") },
+      { test: /\.sass$/, loader: ExtractTextPlugin.extract("style", "css!autoprefixer?browsers=last 2 version!sass?indentedSyntax") }
     ]
   },
   progress: true,
@@ -31,7 +33,7 @@ module.exports = {
     // new webpack.NormalModuleReplacementPlugin(/debug/, process.cwd() + "/webpack/utils/noop.js"),
 
     // css files from the extract-text-plugin loader
-    new ExtractTextPlugin("[name]-[chunkhash].css"),
+    new ExtractTextPlugin("[name]-[hash].css"),
 
     // ignore dev config
     new webpack.IgnorePlugin(/\.\/dev/, /\/config$/),

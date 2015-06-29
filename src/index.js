@@ -1,11 +1,8 @@
 import React from "react";
+import router from "./router";
 
-class Index extends React.Component {
-  render() {
-    return <div className="index">
-      <p>Hello, {this.props.name}!</p>
-    </div>;
-  }
-}
+const rootEl = document.getElementById("root");
 
-export default Index;
+router.run((Handler, state) =>
+  React.render(<Handler {...state} />, rootEl)
+);

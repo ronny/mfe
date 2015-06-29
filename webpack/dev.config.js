@@ -22,15 +22,17 @@ module.exports = {
   },
   output: {
     path: assetsPath,
-    filename: "[name]-[chunkhash].js",
-    chunkFilename: "[name]-[chunkhash].js",
+    filename: "[name]-[hash].js",
+    chunkFilename: "[name]-[hash].js",
     publicPath: "http://" + WEBPACK_HOST + ":" + WEBPACK_PORT + "/assets/"
   },
   module: {
     loaders: [
       { test: /\.(jpe?g|png|gif|svg|ico)$/, loader: "file" },
       { test: /\.js$/, exclude: /node_modules/, loaders: ["react-hot", "babel?cacheDirectory"] },
-      { test: /\.(sass|scss)$/, loader: "style!css!autoprefixer?browsers=last 2 version!sass?outputStyle=expanded&sourceMap=true&sourceMapContents=true" }
+      // { test: /\.css$/, loader: "style!css!autoprefixer?browsers=last 2 version" },
+      // { test: /\.scss$/, loader: "style!css!autoprefixer?browsers=last 2 version!sass?outputStyle=expanded&sourceMap=true&sourceMapContents=true" },
+      { test: /\.sass$/, loader: "style!css!autoprefixer?browsers=last 2 version!sass?indentedSyntax&outputStyle=expanded&sourceMap=true&sourceMapContents=true" }
     ]
   },
   progress: true,

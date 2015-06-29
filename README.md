@@ -16,11 +16,10 @@ interesting things with minimal setup and configuration.
 - [React] with JSX support
 - [Flux] with [Immutable]
 - [react-router]
-- [autoprefixer]
+- Server side rendering (isomorphic) with [Express]
+- [Sass] with [autoprefixer]
 - Modern testing: [Karma], [Mocha], [Chai]
-- Optional server side rendering (or isomorphic) with [Express]
 - Internationalization with [React Intl]
-- [Sass]
 
 [Babel]: https://babeljs.io
 [React]: http://facebook.github.io/react/
@@ -58,6 +57,12 @@ To run eslint against the `src` directory:
 npm run lint
 ```
 
+## Webpack
+
+
+
+
+
 ## Credits
 
 This project is only possible with the help of many people.
@@ -65,6 +70,7 @@ This project is only possible with the help of many people.
 Thank you to the maintainers and contributors of the following projects:
 
 - [https://github.com/gpbl/isomorphic500](https://github.com/gpbl/isomorphic500)
+- [https://github.com/gaearon/flux-react-router-example](https://github.com/gaearon/flux-react-router-example)
 
 And thank you to all the maintainers and contributors of the wonderful tools
 being used by this project.
