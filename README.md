@@ -9,30 +9,32 @@ interesting things with minimal setup and configuration.
 
 ## What’s Included?
 
-- ES6 / ES2015 and beyond, with [Babel]
-- [eslint]
-- [Webpack] with hot module replacement, react-hot-loader, and
+- ✓ ES6 / ES2015 and beyond, with [Babel]
+- ✓ [eslint]
+- ✓ [Webpack] with hot module replacement, react-hot-loader, and
   sourcemaps in development
-- [React] with JSX support
-- [Flux] with [Immutable]
-- [react-router]
-- Server side rendering (isomorphic) with [Express]
-- [Sass] with [autoprefixer]
+- ✓ [React] with JSX support
+- ✓ [react-router]
+- ✓ Server side rendering (isomorphic) with [Express]
+- ✓ [Sass] with [autoprefixer]
+- [redux] with [Immutable]
 - Modern testing: [Karma], [Mocha], [Chai]
+- [CSS Modules]
 
 [Babel]: https://babeljs.io
-[React]: http://facebook.github.io/react/
-[Flux]: https://facebook.github.io/flux/
-[Immutable]: https://facebook.github.io/immutable-js/
-[react-router]: https://github.com/rackt/react-router
-[Webpack]: http://webpack.github.io
 [eslint]: http://eslint.org
+[Webpack]: http://webpack.github.io
+[React]: http://facebook.github.io/react/
+[react-router]: https://github.com/rackt/react-router
+[Express]: http://expressjs.com
+[Sass]: http://sass-lang.com
 [autoprefixer]: https://github.com/postcss/autoprefixer
+[redux]: https://github.com/gaearon/redux
+[Immutable]: https://facebook.github.io/immutable-js/
 [Karma]: http://karma-runner.github.io/
 [Mocha]: http://mochajs.org
 [Chai]: http://chaijs.com
-[Express]: http://expressjs.com
-[Sass]: http://sass-lang.com
+[CSS Modules]: https://github.com/css-modules/css-modules
 
 
 ## Setup
@@ -44,8 +46,10 @@ interesting things with minimal setup and configuration.
 
 ## Babel
 
-To customise Babel, update the `.babelrc` file and follow the documentation at
-[https://babeljs.io/docs/usage/babelrc/](https://babeljs.io/docs/usage/babelrc/).
+Experimental features are enabled via transformers. To customise Babel, update
+the `.babelrc` file and follow the directions in [babelrc documentation].
+
+[babelrc documentation]: https://babeljs.io/docs/usage/babelrc/
 
 ## eslint
 
@@ -55,12 +59,33 @@ To run eslint against the `src` directory:
 npm run lint
 ```
 
+It's probably a good idea to have your IDE run a linter while you're editing code.
+
+- [Sublime Text 3]
+
+[Sublime Text 3]: https://github.com/este/este/wiki/Recommended-Sublime-Text-3-settings#how-to-setup-the-eslint-for-st3
+
 ## Webpack
 
 All webpack related files are in the `webpack` directory.
 
+## React
 
-## Planned Inclusions
+Supports React components definitions as [plain ES6 classes], even with ES7
+property initializers.
+
+JSX is supported by default, thanks to Babel.
+
+[plain ES6 classes]: https://facebook.github.io/react/blog/2015/01/27/react-v0.13.0-beta-1.html#plain-javascript-classes
+
+## React Router
+
+Routes are defined in `src/routes.js`.
+
+
+## Planned Future Inclusions
+
+Pull requests welcome!
 
 - Internationalization with [React Intl]
 
