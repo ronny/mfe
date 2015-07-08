@@ -95,10 +95,12 @@ Pull requests welcome!
 
 This project is only possible with the help of many people.
 
-Thank you to the maintainers and contributors of the following projects:
+Thank you to the maintainers and contributors of the following projects for
+giving me a great starting point for this project.
 
 - [https://github.com/gpbl/isomorphic500](https://github.com/gpbl/isomorphic500)
 - [https://github.com/gaearon/flux-react-router-example](https://github.com/gaearon/flux-react-router-example)
+- [https://github.com/erikras/react-redux-universal-hot-example](https://github.com/erikras/react-redux-universal-hot-example)
 
 And thank you to all the maintainers and contributors of the wonderful tools
 being used by this project.
