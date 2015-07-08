@@ -102,5 +102,9 @@ giving me a great starting point for this project.
 - [https://github.com/gaearon/flux-react-router-example](https://github.com/gaearon/flux-react-router-example)
 - [https://github.com/erikras/react-redux-universal-hot-example](https://github.com/erikras/react-redux-universal-hot-example)
 
-And thank you to all the maintainers and contributors of the wonderful tools
-being used by this project.
+Thank you to all the maintainers and contributors of the wonderful tools being
+used by this project.
+
+And thank you to [Envato] for sponsoring my time working on this.
+
+[Envato]: http://www.envato.com
