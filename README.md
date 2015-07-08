@@ -42,7 +42,7 @@ interesting things with minimal setup and configuration.
 - Clone this repo
 - `npm install`
 - `npm run dev`
-
+- Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## Babel
 
@@ -71,12 +71,10 @@ All webpack related files are in the `webpack` directory.
 
 ## React
 
-Supports React components definitions as [plain ES6 classes], even with ES7
-property initializers.
+Supports React components in [plain ES6+ classes], with built-in support for
+JSX and ES7 property initializers and the spread operator, thanks to Babel.
 
-JSX is supported by default, thanks to Babel.
-
-[plain ES6 classes]: https://facebook.github.io/react/blog/2015/01/27/react-v0.13.0-beta-1.html#plain-javascript-classes
+[plain ES6+ classes]: http://babeljs.io/blog/2015/06/07/react-on-es6-plus/
 
 ## React Router
 
