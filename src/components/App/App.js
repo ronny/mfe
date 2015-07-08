@@ -11,13 +11,11 @@ class App extends React.Component {
     initialName: "World",
   };
 
-  static displayName = "App";
-
   state = {
     name: this.props.initialName,
   };
 
-  onNameChange(event) {
+  onNameChange = (event) => {
     this.setState({name: event.currentTarget.value});
   }
 
@@ -32,7 +30,7 @@ class App extends React.Component {
             type="text"
             name="name"
             value={this.state.name}
-            onChange={this.onNameChange.bind(this)} />
+            onChange={this.onNameChange} />
         </div>
       </DocumentTitle>
     );
