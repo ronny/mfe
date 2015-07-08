@@ -19,7 +19,6 @@ interesting things with minimal setup and configuration.
 - Server side rendering (isomorphic) with [Express]
 - [Sass] with [autoprefixer]
 - Modern testing: [Karma], [Mocha], [Chai]
-- Internationalization with [React Intl]
 
 [Babel]: https://babeljs.io
 [React]: http://facebook.github.io/react/
@@ -33,7 +32,6 @@ interesting things with minimal setup and configuration.
 [Mocha]: http://mochajs.org
 [Chai]: http://chaijs.com
 [Express]: http://expressjs.com
-[React Intl]: http://formatjs.io/react/
 [Sass]: http://sass-lang.com
 
 
@@ -46,7 +44,7 @@ interesting things with minimal setup and configuration.
 
 ## Babel
 
-To customise Babel, create a `.babelrc` file and follow the documentation at
+To customise Babel, update the `.babelrc` file and follow the documentation at
 [https://babeljs.io/docs/usage/babelrc/](https://babeljs.io/docs/usage/babelrc/).
 
 ## eslint
@@ -59,9 +57,14 @@ npm run lint
 
 ## Webpack
 
+All webpack related files are in the `webpack` directory.
 
 
+## Planned Inclusions
 
+- Internationalization with [React Intl]
+
+[React Intl]: http://formatjs.io/react/
 
 ## Credits
 

@@ -1,0 +1,7 @@
+{
+  "optional": [
+    "runtime",
+    "es7.classProperties",
+    "es7.objectRestSpread"
+  ]
+}

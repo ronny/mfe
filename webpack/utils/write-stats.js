@@ -11,7 +11,6 @@ var filepath = path.resolve(__dirname, "../../webpack-stats.json");
 // Write only a relevant subset of the stats and attach the public path to it
 
 module.exports = function writeStats(stats) {
-
   var publicPath = this.options.output.publicPath;
 
   var json = stats.toJson();

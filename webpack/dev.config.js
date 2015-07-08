@@ -17,7 +17,7 @@ module.exports = {
     "main": [
       "webpack-dev-server/client?http://" + WEBPACK_HOST + ":" + WEBPACK_PORT,
       "webpack/hot/only-dev-server",
-      "./src/client.js"
+      "./src/client/index.js"
     ]
   },
   output: {
@@ -48,7 +48,9 @@ module.exports = {
 
         // Mainly used to require CSS files with webpack, which can happen only on browser
         // Used as `if (process.env.BROWSER)...`
-        BROWSER: JSON.stringify(true)
+        BROWSER: JSON.stringify(true),
+        __CLIENT__: true,
+        __SERVER__: false,
       }
     }),
 

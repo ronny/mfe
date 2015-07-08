@@ -1,3 +1,5 @@
 export default {
-  locales: ["en"]
+  locales: ["en"],
+
+  gaTrackingId: "UA-XXXXXX-1",
 };

@@ -9,7 +9,7 @@ var assetsPath = path.join(__dirname, "../public/assets");
 module.exports = {
   devtool: "source-map",
   entry: {
-    "main": "./src/client.js"
+    "main": "./src/client/index.js"
   },
   output: {
     path: assetsPath,
@@ -47,8 +47,9 @@ module.exports = {
         BROWSER: JSON.stringify(true),
 
         // Useful to reduce the size of client-side libraries, e.g. react
-        NODE_ENV: JSON.stringify("production")
-
+        NODE_ENV: JSON.stringify("production"),
+        __CLIENT__: true,
+        __SERVER__: false,
       }
     }),
 

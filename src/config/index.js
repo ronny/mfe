@@ -7,6 +7,6 @@ if (SUPPORTED_ENVIRONMENTS.find(supportedEnvironment => process.env.NODE_ENV ===
   configFileBaseName = process.env.NODE_ENV;
 }
 
-const config = require(`../config/${configFileBaseName}.js`);
+const config = require(`../../config/${configFileBaseName}.js`);
 
 export default config;
