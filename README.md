@@ -15,7 +15,7 @@ interesting things with minimal setup and configuration.
   sourcemaps in development
 - ✓ [React] with JSX support
 - ✓ [react-router]
-- ✓ Server side rendering (isomorphic) with [Express]
+- ✓ Server side rendering (~~isomorphic~~ [universal]) with [Express]
 - ✓ [Sass] with [autoprefixer]
 - [redux] with [Immutable]
 - Modern testing: [Karma], [Mocha], [Chai]
@@ -35,7 +35,7 @@ interesting things with minimal setup and configuration.
 [Mocha]: http://mochajs.org
 [Chai]: http://chaijs.com
 [CSS Modules]: https://github.com/css-modules/css-modules
-
+[universal]: https://medium.com/@mjackson/universal-javascript-4761051b7ae9
 
 ## Setup
 
