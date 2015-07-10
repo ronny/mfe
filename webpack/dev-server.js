@@ -4,7 +4,7 @@ import WebpackDevServer from "webpack-dev-server";
 import webpack from "webpack";
 import config from "./dev.config";
 
-const debug = require("debug")(process.env.APP_NAME || "mfe-template");
+const debug = require("debug")(process.env.APP_NAME || "mfe");
 
 const WEBPACK_HOST = process.env.HOST || "localhost";
 const WEBPACK_PORT = parseInt(process.env.PORT) + 1 || 3001;

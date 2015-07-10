@@ -1,5 +1,5 @@
 {
-  "name": "mfe-template",
+  "name": "mfe",
   "version": "0.0.1",
   "description": "A template for modern front-end projects.",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ronny/mfe-template.git"
+    "url": "https://github.com/ronny/mfe.git"
   },
   "keywords": [
     "template",
@@ -25,12 +25,12 @@
   "author": "Ronny Haryanto",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ronny/mfe-template/issues"
+    "url": "https://github.com/ronny/mfe/issues"
   },
   "engines": {
     "node": "0.12.x"
   },
-  "homepage": "https://github.com/ronny/mfe-template#readme",
+  "homepage": "https://github.com/ronny/mfe#readme",
   "dependencies": {
     "babel-runtime": "^5.6.15",
     "body-parser": "^1.13.1",
@@ -46,7 +46,7 @@
     "react": "^0.13.3",
     "react-document-title": "^1.0.2",
     "react-router": "^1.0.0-beta3",
-    "redux": "^0.12.0",
+    "redux": "^1.0.0-alpha",
     "serialize-javascript": "^1.0.0",
     "serve-favicon": "^2.3.0",
     "webpack": "^1.10.0",

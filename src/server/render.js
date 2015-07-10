@@ -36,8 +36,7 @@ function render(req, res, next) {
           res.send(doctype + html);
         });
     });
-  }
-  catch (e) {
+  } catch (e) {
     next(e);
   }
 }

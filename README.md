@@ -1,24 +1,28 @@
-# MFE Template
+# MFE
 
 A template for modern front-end projects.
 
-The goal is to have a template project that is optimised for both development
-and production environments with all the modern tooling included and
-configured to make it easy to just clone the template and start working on the
-interesting things with minimal setup and configuration.
+## Goals
+
+The main goal of this project is to have a template project that is optimised
+for both development and production environments with all the modern tooling
+included and configured to make it easy to just clone the template and start
+working on the interesting things with minimal setup and configuration.
+
+At the same time, this project also provides a non-trivial example of a working app,
+showing how it is intended to work in real life.
 
 ## What’s Included?
 
-- ✓ ES6 / ES2015 and beyond, with [Babel]
+- ✓ ES6/ES7 with [Babel]
 - ✓ [eslint]
-- ✓ [Webpack] with hot module replacement, react-hot-loader, and
-  sourcemaps in development
+- ✓ [Webpack] with hot module replacement, and source maps in development
 - ✓ [React] with JSX support
 - ✓ [react-router]
 - ✓ Server side rendering (~~isomorphic~~ [universal]) with [Express]
 - ✓ [Sass] with [autoprefixer]
-- [redux] with [Immutable]
-- Modern testing: [Karma], [Mocha], [Chai]
+- [redux] hot-reloadable atomic Flux with [Immutable]
+- Testing: [Karma], [Mocha], [Chai]
 - [CSS Modules]
 
 [Babel]: https://babeljs.io
