@@ -9,14 +9,15 @@ for both development and production environments with all the modern tooling
 included and configured to make it easy to just clone the template and start
 working on the interesting things with minimal setup and configuration.
 
-At the same time, this project also provides a non-trivial example of a working app,
-showing how it is intended to work in real life.
+At the same time, this project also provides a non-trivial example of a
+working app, showing how it is intended to work in real life.
 
 ## What’s Included?
 
 - ✓ ES6/ES7 with [Babel]
 - ✓ [eslint]
-- ✓ [Webpack] with hot module replacement, and source maps in development
+- ✓ [Webpack] with hot module replacement, react-hot-loader,
+    and source maps in development
 - ✓ [React] with JSX support
 - ✓ [react-router]
 - ✓ Server side rendering (~~isomorphic~~ [universal]) with [Express]
@@ -101,8 +102,9 @@ Thank you to the maintainers and contributors of the following projects for
 giving me a great starting point for this project.
 
 - [https://github.com/gpbl/isomorphic500](https://github.com/gpbl/isomorphic500)
-- [https://github.com/gaearon/flux-react-router-example](https://github.com/gaearon/flux-react-router-example)
 - [https://github.com/erikras/react-redux-universal-hot-example](https://github.com/erikras/react-redux-universal-hot-example)
+- [https://github.com/gaearon/redux](https://github.com/gaearon/redux)
+- [https://github.com/quangbuule/redux-example](https://github.com/quangbuule/redux-example)
 
 Thank you to all the maintainers and contributors of the wonderful tools being
 used by this project.

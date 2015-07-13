@@ -1,6 +1,6 @@
 import React, {PropTypes} from "react";
 import ga from "./ga";
-import config from "../../config/index";
+import config from "../../../config";
 
 const webpackStats = require("../../../webpack-stats.json");
 
