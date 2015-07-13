@@ -20,7 +20,7 @@ export default function(config) {
     client: {
       mocha: {
         reporter: "html",
-        ui: "bdd" // describe(), it()
+        ui: "bdd" // describe(), it() style
       }
     },
 
@@ -62,6 +62,5 @@ export default function(config) {
 
   };
 
-  // console.dir(obj.webpack.resolve);
   config.set(obj);
 }
