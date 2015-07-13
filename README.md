@@ -112,8 +112,8 @@ It will launch Chrome by default as the browser for karma, but the output of
 the tests will be in console, not in the browser. Pressing the debug button
 will load Mocha's html output for debugging.
 
-TODO: write about using rewire for stubbing collaborators
-TODO: CI setup
+- TODO: write about using rewire for stubbing collaborators
+- TODO: CI setup
 
 ## Planned Future Inclusions
 
