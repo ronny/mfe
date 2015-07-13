@@ -4,11 +4,12 @@
   "description": "A template for modern front-end projects.",
   "scripts": {
     "start": "NODE_ENV=production node index",
+    "postinstall": "npm run build",
+    "test": "karma start config/karma.conf.js",
+
     "dev": "NODE_ENV=development nodemon index",
     "build": "webpack --stats --progress --config ./webpack/prod.config.js",
-    "postinstall": "npm run build",
-    "lint": "eslint src",
-    "test": "karma start config/karma.conf.js"
+    "lint": "eslint src"
   },
   "repository": {
     "type": "git",
@@ -17,10 +18,12 @@
   "keywords": [
     "template",
     "react",
+    "boilerplate",
     "webpack",
     "flux",
     "babel",
-    "isomorphic"
+    "isomorphic",
+    "universal"
   ],
   "author": "Ronny Haryanto",
   "license": "MIT",

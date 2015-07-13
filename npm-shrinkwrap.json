@@ -537,6 +537,11 @@
       "from": "locale@*",
       "resolved": "https://registry.npmjs.org/locale/-/locale-0.0.20.tgz"
     },
+    "lodash": {
+      "version": "3.10.0",
+      "from": "lodash@*",
+      "resolved": "https://registry.npmjs.org/lodash/-/lodash-3.10.0.tgz"
+    },
     "morgan": {
       "version": "1.6.0",
       "from": "morgan@*",
@@ -601,6 +606,11 @@
           }
         }
       }
+    },
+    "qs": {
+      "version": "4.0.0",
+      "from": "qs@*",
+      "resolved": "https://registry.npmjs.org/qs/-/qs-4.0.0.tgz"
     },
     "react": {
       "version": "0.13.3",
@@ -733,9 +743,9 @@
       }
     },
     "redux": {
-      "version": "0.12.0",
-      "from": "redux@*",
-      "resolved": "https://registry.npmjs.org/redux/-/redux-0.12.0.tgz",
+      "version": "1.0.0-alpha",
+      "from": "redux@1.0.0-alpha",
+      "resolved": "https://registry.npmjs.org/redux/-/redux-1.0.0-alpha.tgz",
       "dependencies": {
         "invariant": {
           "version": "2.1.0",
