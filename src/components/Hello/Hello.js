@@ -1,4 +1,4 @@
-import React from "react";
+import React, { PropTypes } from "react";
 import DocumentTitle from "react-document-title";
 
 if (process.env.BROWSER) {
@@ -6,6 +6,13 @@ if (process.env.BROWSER) {
 }
 
 class Hello extends React.Component {
+  static propTypes = {
+    name: PropTypes.string,
+  };
+  static defaultProps = {
+    name: "World"
+  };
+
   render() {
     const text = `Hello, ${this.props.name}!`;
 
