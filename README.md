@@ -22,9 +22,10 @@ working app, showing how it is intended to work in real life.
 - ✓ [react-router]
 - ✓ Server side rendering (~~isomorphic~~ [universal]) with [Express]
 - ✓ [Sass] with [autoprefixer]
-- [redux] hot-reloadable atomic Flux with [Immutable]
-- Testing: [Karma], [Mocha], [Chai]
+- ✓ Testing: [Karma], [Mocha], [Chai]
+- images and fonts as component dependencies
 - [CSS Modules]
+- [redux] hot-reloadable atomic Flux with [Immutable]
 
 [Babel]: https://babeljs.io
 [eslint]: http://eslint.org
@@ -74,6 +75,9 @@ It's probably a good idea to have your IDE run a linter while you're editing cod
 
 All webpack related files are in the `webpack` directory.
 
+The "entry points", `webpack/dev.config.js` and `webpack/prod.config.js` are not in ES6+,
+but the actual config files that are loaded are in ES6+.
+
 ## React
 
 Supports React components in [plain ES6+ classes], with built-in support for
@@ -85,6 +89,31 @@ JSX and ES7 property initializers and the spread operator, thanks to Babel.
 
 Routes are defined in `src/routes.js`.
 
+## Testing
+
+The [Karma] configuration is in `config/karma.conf.js`. The entry point is not ES6+, but
+`config/karmaConfigBuilder.js` (where the actual config lives) is.
+
+Karma automatically scans for `*.test.js` in `src`.
+
+There is an example test file for a React component in
+`src/components/Hello/__test__/Hello.test.js`. In addition to demonstrating
+how to write tests with [Mocha] and [Chai], it also shows how to do shallow
+rendering with React to avoid rendering components to DOM (real or fake) for
+testing.
+
+To run tests, simply do:
+
+```
+npm test
+```
+
+It will launch Chrome by default as the browser for karma, but the output of
+the tests will be in console, not in the browser. Pressing the debug button
+will load Mocha's html output for debugging.
+
+TODO: write about using rewire for stubbing collaborators
+TODO: CI setup
 
 ## Planned Future Inclusions
 
