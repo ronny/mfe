@@ -39,6 +39,7 @@ export default {
   },
   progress: true,
   resolve: shared.resolve,
+  externals: shared.externals,
   plugins: [
     new ExtractTextPlugin("[name]-[hash].css"),
     new webpack.IgnorePlugin(/\.\/dev/, /\/config$/),

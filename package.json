@@ -49,7 +49,6 @@
     "react": "^0.13.3",
     "react-document-title": "^1.0.2",
     "react-router": "^1.0.0-beta3",
-    "redux": "^1.0.0-alpha",
     "serialize-javascript": "^1.0.0",
     "serve-favicon": "^2.3.0",
     "webpack": "^1.10.0",

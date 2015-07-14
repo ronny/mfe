@@ -1,6 +1,6 @@
 import React, { PropTypes } from "react";
-import Hello from "../Hello/Hello";
 import DocumentTitle from "react-document-title";
+import Hello from "../Hello/Hello";
 
 class App extends React.Component {
   static propTypes = {

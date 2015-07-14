@@ -32,18 +32,13 @@ export default {
           "babel?optional[]=runtime&stage=0&cacheDirectory"
         ]
       },
-      {
-        test: shared.loaders.sass.test,
-        loaders: [
-          "style",
-          ...shared.loaders.sass.loaders
-        ]
-      },
+      shared.loaders.sass,
       shared.loaders.image
     ]
   },
   progress: true,
   resolve: shared.resolve,
+  // externals: shared.externals,
   plugins: [
 
     // hot reload

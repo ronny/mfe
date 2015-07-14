@@ -6,8 +6,6 @@ import cookieParser from "cookie-parser";
 import favicon from "serve-favicon";
 import morgan from "morgan";
 import csurf from "csurf";
-// import locale from "locale";
-// import config from "../config";
 import render from "./render";
 
 const server = express();
@@ -18,19 +16,10 @@ server.use(cookieParser());
 server.use(compression());
 server.use(favicon(path.resolve(__dirname, "../components/HtmlDocument/favicon.png")));
 
-/////////////////////////////////////////////////////////////////////
-// Set the default locale
-// locale.Locale.default = config.locales[0];
-
-// Set req.locale based on the browser settings
-// server.use(locale(config.locales));
-
-// Overwrite req.locale either from cookie or querystring
-// server.use(setLocale);
-
-/////////////////////////////////////////////////////////////////////
-
 server.use(csurf({ cookie: true }));
+
+/////////////////////////////////////////////////////////////////////
+
 
 // On production, use the public directory for static files
 // This directory is created by webpack on build time.

@@ -24,6 +24,7 @@ function render(req, res, next) {
             <Router {...initialState} />
           );
 
+          console.log("rendering html");
           // The application component is rendered to static markup (like
           // renderToString but without the react specific attrs) and sent as
           // response.
