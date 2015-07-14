@@ -16,7 +16,7 @@ function render(req, res, next) {
   try {
     const location = new Location(req.path, req.query);
 
-    Router.run(routes, location, (error, initialState) => {
+    Router.run(routes, location, (error, initialState = {}) => {
       fetchComponentsData(initialState.components)
         .then((state) => {
           console.log("state", state);
