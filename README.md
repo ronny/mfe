@@ -75,8 +75,9 @@ It's probably a good idea to have your IDE run a linter while you're editing cod
 
 All webpack related files are in the `webpack` directory.
 
-The "entry points", `webpack/dev.config.js` and `webpack/prod.config.js` are not in ES6+,
-but the actual config files that are loaded are in ES6+.
+The "entry points", `webpack/dev.config.es5.js` and
+`webpack/prod.config.es5.js` are not in ES6+, but the actual config files that
+are loaded are in ES6+.
 
 ## React
 
