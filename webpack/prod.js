@@ -21,6 +21,7 @@ const commonLoaders = [
 
 export default [
   {
+    name: "browser prod",
     devtool: "source-map",
     entry: {
       "main": "./src/client/index.js"
@@ -81,13 +82,13 @@ export default [
     ]
   },
   {
-    name: "server-side rendering",
+    name: "server-side rendering prod",
     entry: "./src/server/render.js",
     target: "node",
     output: {
       path: assetsPath,
       filename: "../../src/server/render.generated.js",
-      publicPath: "http://" + WEBPACK_HOST + ":" + WEBPACK_PORT + "/assets/",
+      publicPath: "/assets/",
       libraryTarget: "commonjs2",
     },
     externals: shared.externals,
@@ -95,16 +96,9 @@ export default [
       loaders: [
         ...commonLoaders,
         {
-          ...shared.loaders.css,
-          loaders: [
-            "css/locals?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]",
-            "autoprefixer?browsers=last 2 version",
-          ]
-        },
-        {
           ...shared.loaders.sass,
           loaders: [
-            "css/locals?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]",
+            "css/locals?modules",
             "autoprefixer?browsers=last 2 version",
             "sass?indentedSyntax",
           ]

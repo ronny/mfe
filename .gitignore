@@ -1,3 +1,4 @@
 node_modules
 public/assets
 webpack-stats.json
+*.generated.js
