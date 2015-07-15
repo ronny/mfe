@@ -15,13 +15,9 @@ describe("Hello", () => {
     hello = createComponent(Hello, {name: "Monkey"});
   });
 
-  it("sets document title", () => {
-    expect(hello.props.title).to.equal("Hello, Monkey!");
-  });
-
   it("renders text", () => {
-    const div = hello.props.children;
-    const p = div.props.children;
-    expect(p.props.children).to.equal("Hello, Monkey!");
+    const spans = hello.props.children;
+    const texts = spans.map(span => span.props.children);
+    expect(texts).to.eql(["Hello, ", "Monkey", "!"]);
   });
 });

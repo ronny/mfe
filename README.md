@@ -92,8 +92,8 @@ Routes are defined in `src/routes.js`.
 
 ## Testing
 
-The [Karma] configuration is in `config/karma.conf.js`. The entry point is not ES6+, but
-`config/karmaConfigBuilder.js` (where the actual config lives) is.
+The [Karma] configuration is in `config/karma.conf.es5.js`. The entry point is
+not ES6+, but `config/karma.conf.js` (where the actual config lives) is.
 
 Karma automatically scans for `*.test.js` in `src`.
 
