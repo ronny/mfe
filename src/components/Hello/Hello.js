@@ -12,11 +12,12 @@ class Hello extends React.Component {
 
   render() {
     return (
-      <p className={styles.hello}>
-        <span className={styles.greeting}>Hello,</span>
+      <div className={styles.hello}>
+        <span className={styles.greeting}>Hello, </span>
         <span className={styles.name}>{this.props.name}</span>
         <span className={styles.exclamation}>!</span>
-      </p>
+        <p>Nice to meet you!</p>
+      </div>
     );
   }
 }

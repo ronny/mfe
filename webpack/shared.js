@@ -15,9 +15,32 @@ export default {
         "sass?indentedSyntax",
       ]
     },
+    css: {
+      test: /\.css$/,
+      loaders: [
+        "css?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]",
+        "autoprefixer?browsers=last 2 version",
+      ]
+    },
     image: {
-      test: /\.(jpe?g|png|gif|svg|ico)$/,
-      loaders: ["file"]
+      test: /\.(jpe?g|png|gif|svg|ico)($|\?)/,
+      loaders: ["url?limit=10000"],
+    },
+    woff: {
+      test: /\.woff2?($|\?)/,
+      loaders: ["url?limit=100000"],
+    },
+    otherfont: {
+      test: /\.(ttf|eot)($|\?)/,
+      loaders: ["file"],
+    },
+    html: {
+      test: /\.html$/,
+      loaders: ["html"],
+    },
+    markdown: {
+      test: /\.(md|markdown)$/,
+      loaders: ["html", "markdown"],
     },
     json: {
       test: /\.json$/,

@@ -23,7 +23,7 @@ working app, showing how it is intended to work in real life.
 - ✓ [Sass] with [autoprefixer]
 - ✓ Testing: [Karma], [Mocha], [Chai]
 - ✓ [CSS Modules]
-- images and fonts as component dependencies
+- ✓ images and fonts as component dependencies
 - [redux] hot-reloadable atomic Flux with [Immutable]
 - Server side rendering (~~isomorphic~~ [universal]) with [Express]
 
