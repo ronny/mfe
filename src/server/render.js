@@ -21,7 +21,7 @@ function render(req, res, next) {
         .then((state) => {
           console.log("state", state);
           const markup = React.renderToString(
-            <Router {...initialState} />
+            <Router location={location} {...initialState} />
           );
 
           console.log("rendering html");

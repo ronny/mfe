@@ -1,15 +1,3 @@
-import fs from "fs";
-
-const nodeModules =
-  fs.readdirSync("node_modules")
-    .filter(x => ([".bin"].indexOf(x) === -1))
-    .reduce((mods, mod) => {
-      mods[mod] = "commonjs " + mod;
-      return mods;
-    }, {});
-
-// console.log("nodeModules", nodeModules);
-
 export default {
   loaders: {
     js: {
@@ -22,7 +10,7 @@ export default {
     sass: {
       test: /\.sass$/,
       loaders: [
-        "css/locals?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]",
+        "css?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]",
         "autoprefixer?browsers=last 2 version",
         "sass?indentedSyntax",
       ]
@@ -31,6 +19,10 @@ export default {
       test: /\.(jpe?g|png|gif|svg|ico)$/,
       loaders: ["file"]
     },
+    json: {
+      test: /\.json$/,
+      loaders: ["json"]
+    }
   },
 
   resolve: {
@@ -46,7 +38,4 @@ export default {
     // `../../blah`, etc).
     modulesDirectories: ["src", "node_modules"],
   },
-
-  // No need to include node_modules in the bundle.
-  // externals: nodeModules,
 };

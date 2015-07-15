@@ -5,4 +5,5 @@ require("babel/register")({
   sourceMaps: true
 });
 
+console.log("webpack/dev.config");
 module.exports = require("./dev");

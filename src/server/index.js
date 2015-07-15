@@ -6,7 +6,9 @@ import cookieParser from "cookie-parser";
 import favicon from "serve-favicon";
 import morgan from "morgan";
 import csurf from "csurf";
-import render from "./render";
+import fs from "fs";
+
+console.log("server/index.js");
 
 const server = express();
 
@@ -36,7 +38,13 @@ if (server.get("env") === "development") {
 
 /////////////////////////////////////////////////////////////////////
 // Render the app server-side and send it as response
-server.use(render);
+// import render from "./render.generated.js";
+// server.use(render);
+
+server.get("/", (req, res, next) => { // eslint-disable-line no-unused-vars
+  res.set("Content-Type", "text/html");
+  res.send(fs.readFileSync(path.resolve(__dirname, "../../public/index.html")));
+});
 
 // Generic server errors (e.g. not caught by components)
 server.use((err, req, res, next) => {  // eslint-disable-line no-unused-vars

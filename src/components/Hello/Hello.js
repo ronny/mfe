@@ -1,11 +1,6 @@
 import React, { PropTypes } from "react";
 
-// import styles from "./Hello.sass";
-if (process.env.BROWSER) {
-  var styles = require("./Hello.sass");
-} else {
-  var styles = {};
-}
+import styles from "./Hello.sass";
 
 class Hello extends React.Component {
   static propTypes = {
