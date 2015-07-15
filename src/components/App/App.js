@@ -1,6 +1,9 @@
 import React, { PropTypes } from "react";
 import DocumentTitle from "react-document-title";
 import Hello from "../Hello/Hello";
+import Logo from "../Logo/Logo";
+import styles from "./App.sass";
+import fa from "font-awesome/css/font-awesome.css";
 
 class App extends React.Component {
   static propTypes = {
@@ -22,11 +25,16 @@ class App extends React.Component {
   render() {
     return (
       <DocumentTitle title="Sample App">
-        <div className="App">
+        <div className={styles.container}>
+          <Logo />
           <Hello name={this.state.name} />
           <hr />
-          <label>Name:</label>
+          <label className={styles.label}>
+            <i className={`${fa.fa} ${fa["fa-user"]} ${styles.nameIcon}`} />
+            <span className={styles.labelText}>Name:</span>
+          </label>
           <input
+            className={styles.nameField}
             type="text"
             name="name"
             value={this.state.name}

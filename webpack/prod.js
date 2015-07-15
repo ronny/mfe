@@ -58,7 +58,19 @@ export default [
             shared.loaders.sass.loaders.join("!")
           )
         },
+        {
+          test: shared.loaders.css.test,
+          loader: ExtractTextPlugin.extract(
+            "style",
+            shared.loaders.css.loaders.join("!")
+          )
+        },
         shared.loaders.image,
+        shared.loaders.woff,
+        shared.loaders.otherfont,
+        shared.loaders.html,
+        shared.loaders.markdown,
+        shared.loaders.json,
       ],
     },
     progress: true,
@@ -110,6 +122,13 @@ export default [
             "css/locals?modules",
             "autoprefixer?browsers=last 2 version",
             "sass?indentedSyntax",
+          ]
+        },
+        {
+          ...shared.loaders.css,
+          loaders: [
+            "css/locals?modules",
+            "autoprefixer?browsers=last 2 version",
           ]
         }
       ]

@@ -42,7 +42,18 @@ const config = {
           ...shared.loaders.sass.loaders,
         ]
       },
+      {
+        ...shared.loaders.css,
+        loaders: [
+          "style",
+          ...shared.loaders.css.loaders,
+        ]
+      },
       shared.loaders.image,
+      shared.loaders.woff,
+      shared.loaders.otherfont,
+      shared.loaders.html,
+      shared.loaders.markdown,
       shared.loaders.json,
     ]
   },
