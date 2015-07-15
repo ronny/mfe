@@ -12,17 +12,26 @@ const commonLoaders = [
     ...shared.loaders.js,
     loaders: [
       "react-hot",
-      "babel?optional[]=runtime&stage=0&cacheDirectory"
+      "babel?optional[]=runtime&stage=0"
     ]
   },
   shared.loaders.image,
   shared.loaders.json,
 ];
 
+import fs from "fs";
+const externals =
+  fs.readdirSync("node_modules")
+    .filter(x => ([".bin"].indexOf(x) === -1))
+    .reduce((mods, mod) => {
+      mods[mod] = "commonjs " + mod;
+      return mods;
+    }, {});
+
 export default [
   {
     name: "browser prod",
-    devtool: "source-map",
+    // devtool: "source-map",
     entry: {
       "main": "./src/client/index.js"
     },
@@ -31,7 +40,7 @@ export default [
       filename: "[name]-[chunkhash].js",
       chunkFilename: "[name]-[chunkhash].js",
       publicPath: "/assets/",
-      libraryTarget: "umd",
+      libraryTarget: "commonjs2",
     },
     module: {
       loaders: [
@@ -54,7 +63,7 @@ export default [
     },
     progress: true,
     resolve: shared.resolve,
-    externals: shared.externals,
+    externals: externals,
     plugins: [
       new ExtractTextPlugin("[name]-[hash].css"),
       new webpack.IgnorePlugin(/\.\/dev/, /\/config$/),
@@ -91,7 +100,7 @@ export default [
       publicPath: "/assets/",
       libraryTarget: "commonjs2",
     },
-    externals: shared.externals,
+    externals: externals,
     module: {
       loaders: [
         ...commonLoaders,
