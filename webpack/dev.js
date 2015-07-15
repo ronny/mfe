@@ -8,7 +8,10 @@ const assetsPath = path.resolve(__dirname, "../public/assets");
 const WEBPACK_HOST = "localhost";
 const WEBPACK_PORT = parseInt(process.env.PORT, 10) + 1 || 3001;
 
-export default {
+console.log("webpack/dev");
+
+const config = {
+  name: "browser",
   devtool: "cheap-module-eval-source-map",
   entry: {
     "main": [
@@ -19,9 +22,9 @@ export default {
   },
   output: {
     path: assetsPath,
-    filename: "[name]-[hash].js",
-    chunkFilename: "[name]-[hash].js",
-    publicPath: "http://" + WEBPACK_HOST + ":" + WEBPACK_PORT + "/assets/"
+    filename: "[name].js",
+    chunkFilename: "[name].js",
+    publicPath: "http://" + WEBPACK_HOST + ":" + WEBPACK_PORT + "/assets/",
   },
   module: {
     loaders: [
@@ -33,17 +36,19 @@ export default {
         ]
       },
       {
-        test: shared.loaders.sass.test,
+        ...shared.loaders.sass,
         loaders: [
           "style",
-          ...shared.loaders.sass.loaders
+          ...shared.loaders.sass.loaders,
         ]
       },
-      shared.loaders.image
+      shared.loaders.image,
+      shared.loaders.json,
     ]
   },
   progress: true,
   resolve: shared.resolve,
+  externals: shared.externals,
   plugins: [
 
     // hot reload
@@ -79,3 +84,8 @@ export default {
 
   ]
 };
+
+// console.log("dev webpack config");
+// console.dir(config);
+
+export default config;

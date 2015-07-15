@@ -16,14 +16,15 @@ function render(req, res, next) {
   try {
     const location = new Location(req.path, req.query);
 
-    Router.run(routes, location, (error, initialState) => {
+    Router.run(routes, location, (error, initialState = {}) => {
       fetchComponentsData(initialState.components)
         .then((state) => {
           console.log("state", state);
           const markup = React.renderToString(
-            <Router {...initialState} />
+            <Router location={location} {...initialState} />
           );
 
+          console.log("rendering html");
           // The application component is rendered to static markup (like
           // renderToString but without the react specific attrs) and sent as
           // response.

@@ -3,6 +3,7 @@ import ga from "./ga";
 import config from "../../../config";
 
 const webpackStats = require("../../../webpack-stats.json");
+console.dir(webpackStats);
 
 if (process.env.NODE_ENV === "development") {
   // Do not cache webpack stats: the script file would change since

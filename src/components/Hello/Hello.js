@@ -1,9 +1,6 @@
 import React, { PropTypes } from "react";
-import DocumentTitle from "react-document-title";
 
-if (process.env.BROWSER) {
-  require("./Hello.sass");
-}
+import styles from "./Hello.sass";
 
 class Hello extends React.Component {
   static propTypes = {
@@ -14,14 +11,12 @@ class Hello extends React.Component {
   };
 
   render() {
-    const text = `Hello, ${this.props.name}!`;
-
     return (
-      <DocumentTitle title={text}>
-        <div className="Hello">
-          <p>{text}</p>
-        </div>
-      </DocumentTitle>
+      <p className={styles.hello}>
+        <span className={styles.greeting}>Hello,</span>
+        <span className={styles.name}>{this.props.name}</span>
+        <span className={styles.exclamation}>!</span>
+      </p>
     );
   }
 }

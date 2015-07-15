@@ -20,12 +20,12 @@ working app, showing how it is intended to work in real life.
     and source maps in development
 - ✓ [React] with JSX support
 - ✓ [react-router]
-- ✓ Server side rendering (~~isomorphic~~ [universal]) with [Express]
 - ✓ [Sass] with [autoprefixer]
 - ✓ Testing: [Karma], [Mocha], [Chai]
+- ✓ [CSS Modules]
 - images and fonts as component dependencies
-- [CSS Modules]
 - [redux] hot-reloadable atomic Flux with [Immutable]
+- Server side rendering (~~isomorphic~~ [universal]) with [Express]
 
 [Babel]: https://babeljs.io
 [eslint]: http://eslint.org

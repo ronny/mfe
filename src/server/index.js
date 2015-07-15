@@ -6,9 +6,9 @@ import cookieParser from "cookie-parser";
 import favicon from "serve-favicon";
 import morgan from "morgan";
 import csurf from "csurf";
-// import locale from "locale";
-// import config from "../config";
-import render from "./render";
+import fs from "fs";
+
+console.log("server/index.js");
 
 const server = express();
 
@@ -18,19 +18,10 @@ server.use(cookieParser());
 server.use(compression());
 server.use(favicon(path.resolve(__dirname, "../components/HtmlDocument/favicon.png")));
 
-/////////////////////////////////////////////////////////////////////
-// Set the default locale
-// locale.Locale.default = config.locales[0];
-
-// Set req.locale based on the browser settings
-// server.use(locale(config.locales));
-
-// Overwrite req.locale either from cookie or querystring
-// server.use(setLocale);
-
-/////////////////////////////////////////////////////////////////////
-
 server.use(csurf({ cookie: true }));
+
+/////////////////////////////////////////////////////////////////////
+
 
 // On production, use the public directory for static files
 // This directory is created by webpack on build time.
@@ -47,7 +38,13 @@ if (server.get("env") === "development") {
 
 /////////////////////////////////////////////////////////////////////
 // Render the app server-side and send it as response
-server.use(render);
+// import render from "./render.generated.js";
+// server.use(render);
+
+server.get("/", (req, res, next) => { // eslint-disable-line no-unused-vars
+  res.set("Content-Type", "text/html");
+  res.send(fs.readFileSync(path.resolve(__dirname, "../../public/index.html")));
+});
 
 // Generic server errors (e.g. not caught by components)
 server.use((err, req, res, next) => {  // eslint-disable-line no-unused-vars
