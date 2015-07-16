@@ -108,7 +108,7 @@ export default [
     target: "node",
     output: {
       path: assetsPath,
-      filename: "../../src/server/render.generated.js",
+      filename: "../../../src/server/render.generated.js",
       publicPath: "/assets/",
       libraryTarget: "commonjs2",
     },
