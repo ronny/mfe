@@ -1,5 +1,3 @@
-console.log("client");
-
 import React from "react";
 import { history } from "react-router/lib/BrowserHistory";
 import Router from "react-router";
