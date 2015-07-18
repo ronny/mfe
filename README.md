@@ -24,7 +24,7 @@ working app, showing how it is intended to work in real life.
 - ✓ Testing: [Karma], [Mocha], [Chai]
 - ✓ [CSS Modules]
 - ✓ images and fonts as component dependencies
-- [redux] hot-reloadable atomic Flux with [Immutable]
+- ✓ [redux] hot-reloadable Atomic Flux
 - Server side rendering (~~isomorphic~~ [universal]) with [Express]
 
 [Babel]: https://babeljs.io
@@ -36,7 +36,6 @@ working app, showing how it is intended to work in real life.
 [Sass]: http://sass-lang.com
 [autoprefixer]: https://github.com/postcss/autoprefixer
 [redux]: https://github.com/gaearon/redux
-[Immutable]: https://facebook.github.io/immutable-js/
 [Karma]: http://karma-runner.github.io/
 [Mocha]: http://mochajs.org
 [Chai]: http://chaijs.com
@@ -116,12 +115,12 @@ will load Mocha's html output for debugging.
 - TODO: write about using rewire for stubbing collaborators
 - TODO: CI setup
 
-## Planned Future Inclusions
+## Possible Future Inclusions
 
-Pull requests welcome!
-
+- Immutable
 - Internationalization with [React Intl]
 
+[Immutable]: https://facebook.github.io/immutable-js/
 [React Intl]: http://formatjs.io/react/
 
 ## Credits

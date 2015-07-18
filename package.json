@@ -41,7 +41,6 @@
     "cookies": "^0.5.0",
     "csurf": "^1.8.3",
     "express": "^4.13.0",
-    "immutable": "^3.7.4",
     "isomorphic-fetch": "^2.1.0",
     "keymirror-nested": "^1.0.2",
     "locale": "0.0.20",
