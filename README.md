@@ -134,6 +134,7 @@ giving me a great starting point for this project.
 - [https://github.com/erikras/react-redux-universal-hot-example](https://github.com/erikras/react-redux-universal-hot-example)
 - [https://github.com/gaearon/redux](https://github.com/gaearon/redux)
 - [https://github.com/quangbuule/redux-example](https://github.com/quangbuule/redux-example)
+- [https://github.com/emmenko/redux-react-router-async-example](https://github.com/emmenko/redux-react-router-async-example)
 
 Thank you to all the maintainers and contributors of the wonderful tools being
 used by this project.
