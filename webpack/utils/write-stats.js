@@ -6,7 +6,7 @@
 var fs = require("fs");
 var path = require("path");
 
-var filepath = path.resolve(__dirname, "../../webpack-stats.json");
+var filepath = path.resolve(__dirname, "../../../webpack-stats.json");
 
 // Write only a relevant subset of the stats and attach the public path to it
 

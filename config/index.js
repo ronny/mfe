@@ -3,10 +3,16 @@ const DEFAULT_ENVIRONMENT = "development";
 
 let configFileBaseName = DEFAULT_ENVIRONMENT;
 
-if (SUPPORTED_ENVIRONMENTS.find(supportedEnvironment => process.env.NODE_ENV === supportedEnvironment)) {
+if (SUPPORTED_ENVIRONMENTS.filter(supportedEnvironment => process.env.NODE_ENV === supportedEnvironment)[0]) {
   configFileBaseName = process.env.NODE_ENV;
 }
 
-const config = require(`./${configFileBaseName}.js`);
+import defaults from "./defaults";
+const envConfig = require(`./${configFileBaseName}.js`);
+
+const config = {
+  ...defaults,
+  ...envConfig,
+};
 
 export default config;

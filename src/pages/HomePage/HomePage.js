@@ -1,11 +1,14 @@
 import React, { PropTypes } from "react";
 import DocumentTitle from "react-document-title";
-import Hello from "../Hello/Hello";
-import Logo from "../Logo/Logo";
-import styles from "./App.sass";
-import fa from "font-awesome/css/font-awesome.css";
+import { Link } from "react-router";
 
-class App extends React.Component {
+import Hello from "components/Hello/Hello";
+import Logo from "components/Logo/Logo";
+
+import fa from "font-awesome/css/font-awesome.css";
+import styles from "./HomePage.sass";
+
+class HomePage extends React.Component {
   static propTypes = {
     initialName: PropTypes.string,
   };
@@ -18,13 +21,13 @@ class App extends React.Component {
     name: this.props.initialName,
   };
 
-  onNameChange = (event) => {
+  onNameChange(event) {
     this.setState({name: event.currentTarget.value});
   }
 
   render() {
     return (
-      <DocumentTitle title="Sample App">
+      <DocumentTitle title="MFE">
         <div className={styles.container}>
           <Logo />
           <Hello name={this.state.name} />
@@ -38,11 +41,13 @@ class App extends React.Component {
             type="text"
             name="name"
             value={this.state.name}
-            onChange={this.onNameChange} />
+            onChange={::this.onNameChange} />
+          <hr />
+          <Link to="/photos">Photos</Link>
         </div>
       </DocumentTitle>
     );
   }
 }
 
-export default App;
+export default HomePage;

@@ -8,8 +8,6 @@ const assetsPath = path.resolve(__dirname, "../public/assets");
 const WEBPACK_HOST = "localhost";
 const WEBPACK_PORT = parseInt(process.env.PORT, 10) + 1 || 3001;
 
-console.log("webpack/dev");
-
 const config = {
   name: "browser",
   devtool: "cheap-module-eval-source-map",

@@ -1,5 +1,5 @@
 import RewireWebpackPlugin from "rewire-webpack";
-import webpackSharedConfig from "../webpack/shared";
+import webpackSharedConfig from "../../webpack/shared";
 
 export default function(config) {
   const obj = {
@@ -24,7 +24,7 @@ export default function(config) {
       }
     },
 
-    basePath: "..",
+    basePath: "../..",
     files: [
       "src/**/*.test.js"
     ],
@@ -40,7 +40,7 @@ export default function(config) {
           webpackSharedConfig.loaders.js,
           {
             // We don't care about loading other asset types in tests
-            test: /\.(css|sass|jpg|png|svg|gif|ico|eot|ttf|woff)$/,
+            test: /\.(css|sass|jpg|png|svg|gif|ico|eot|ttf|woff2?)$/,
             loader: "null",
           }
         ],

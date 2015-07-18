@@ -4,8 +4,6 @@ import WebpackDevServer from "webpack-dev-server";
 import webpack from "webpack";
 import config from "./dev.config";
 
-console.log("webpack/dev-server");
-
 const debug = require("debug")(process.env.APP_NAME || "mfe");
 
 const WEBPACK_HOST = process.env.HOST || "localhost";
@@ -25,5 +23,5 @@ const webpackDevServer = new WebpackDevServer(compiler, serverOptions);
 
 webpackDevServer.listen(WEBPACK_PORT, WEBPACK_HOST, () => {
   debug("Webpack development server listening on %s:%s", WEBPACK_HOST, WEBPACK_PORT);
-  console.log("Webpack development server listening on http://%s:%s", WEBPACK_HOST, WEBPACK_PORT);
+  console.info("Webpack development server listening on http://%s:%s", WEBPACK_HOST, WEBPACK_PORT);
 });

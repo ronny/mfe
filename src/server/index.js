@@ -8,15 +8,13 @@ import morgan from "morgan";
 import csurf from "csurf";
 import fs from "fs";
 
-console.log("server/index.js");
-
 const server = express();
 
 server.use(morgan(server.get("env") === "production" ? "combined" : "dev"));
 server.use(bodyParser.json());
 server.use(cookieParser());
 server.use(compression());
-server.use(favicon(path.resolve(__dirname, "../components/HtmlDocument/favicon.png")));
+server.use(favicon(path.resolve(__dirname, "../../public/favicon.png")));
 
 server.use(csurf({ cookie: true }));
 
@@ -41,7 +39,7 @@ if (server.get("env") === "development") {
 // import render from "./render.generated.js";
 // server.use(render);
 
-server.get("/", (req, res, next) => { // eslint-disable-line no-unused-vars
+server.use((req, res, next) => { // eslint-disable-line no-unused-vars
   res.set("Content-Type", "text/html");
   res.send(fs.readFileSync(path.resolve(__dirname, "../../public/index.html")));
 });
