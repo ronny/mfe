@@ -8,8 +8,6 @@ import morgan from "morgan";
 import csurf from "csurf";
 import fs from "fs";
 
-console.log("server/index.js");
-
 const server = express();
 
 server.use(morgan(server.get("env") === "production" ? "combined" : "dev"));

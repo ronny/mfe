@@ -5,27 +5,26 @@ import { Provider } from "react-redux";
 import routes from "../routes";
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunkMiddleware from "redux-thunk";
-// import promiseMiddleware from "redux-promise";
 import loggerMiddleware from "./loggerMiddleware";
 import * as reducers from "../reducers";
-import initialState from "../initialState";
-
-console.log("initialState");
-console.dir(initialState);
 
 const reducer = combineReducers(reducers);
 
-const store = applyMiddleware(
+const finalCreateStore = applyMiddleware(
   thunkMiddleware,
-  // promiseMiddleware,
   loggerMiddleware,
-)(createStore)(reducer, initialState);
+)(createStore);
+
+const store = finalCreateStore(reducer);
+// For debugging e.g. easily inspect the current app-wide state
+// anytime by executing `__store.getState()` in the console.
+if (window) {
+  window.__store = store;
+}
 
 React.render(
   <Provider store={store}>
-    {() =>
-      <Router history={history} children={routes} />
-    }
+    {() => <Router history={history} children={routes} />}
   </Provider>,
   document.getElementById("app")
 );

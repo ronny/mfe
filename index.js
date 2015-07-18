@@ -6,5 +6,4 @@ require("babel/register")({
   sourceMaps: true
 });
 
-console.log("index.js");
 require("./src/server");

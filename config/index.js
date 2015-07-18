@@ -12,9 +12,7 @@ const envConfig = require(`./${configFileBaseName}.js`);
 
 const config = {
   ...defaults,
-  envConfig,
+  ...envConfig,
 };
-
-console.dir(config);
 
 export default config;

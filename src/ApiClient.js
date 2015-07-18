@@ -15,7 +15,6 @@ class ApiClient {
 
   constructor(consumerKey) {
     this.consumerKey = consumerKey;
-    console.log("consumerKey", consumerKey);
   }
 
   async photos() {
@@ -26,7 +25,10 @@ class ApiClient {
 
   async get(path) {
     let url = this.prefixed(path);
-    return fetch(`${url}?consumer_key=${this.consumerKey}`);
+    // TODO: do it betterer with an actual URL builder lib
+    let urlWithParams = `${url}?consumer_key=${this.consumerKey}`;
+    console.info("HTTP GET", urlWithParams);
+    return fetch(urlWithParams);
   }
 
   prefixed(path) {

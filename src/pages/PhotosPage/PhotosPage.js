@@ -1,32 +1,39 @@
-import React from "react";
+import React, { PropTypes } from "react";
 import DocumentTitle from "react-document-title";
 import { connect } from "react-redux";
 import { Link } from "react-router";
 import { bindActionCreators } from "redux";
-import PhotoActions from "actions/PhotoActions";
+import * as PhotoActions from "actions/FiveHundredPx/PhotoActions";
 import PhotoList from "components/PhotoList/PhotoList";
-// import fetchOnUpdate from "decorators/fetchOnUpdate";
 
-@connect(state => {
-  console.log("connect: state=", state);
+import styles from "./PhotosPage.sass";
+import fa from "font-awesome/css/font-awesome.css";
+
+@connect(({ fivehundredpx }) => {
   return {
-    photos: state.photos,
+    loading: fivehundredpx.loading,
+    photos: fivehundredpx.photos,
+    error: fivehundredpx.error,
   };
 })
 class PhotosPage extends React.Component {
-  componentWillMount() {
-    const { dispatch } = this.props;
+  static propTypes = {
+    loading: PropTypes.bool.isRequired,
+    photos: PropTypes.arrayOf(PropTypes.object).isRequired,
+    error: PropTypes.object,
+  };
+
+  loadPhotos(event) {
+    event.preventDefault();
+
+    const { error, dispatch } = this.props;
     const actions = bindActionCreators(PhotoActions, dispatch);
-    console.log("componentWillMount");
+
     actions.getNextPage();
   }
 
-  componentDidUpdate(prevProps) {
-    console.log("componentDidUpdate", prevProps);
-  }
-
   render() {
-    const { photos } = this.props;
+    const { loading, error, photos } = this.props;
 
     return (
       <DocumentTitle title="Photos from 500px">
@@ -34,7 +41,33 @@ class PhotosPage extends React.Component {
           <h1>Photos</h1>
           <Link to="/">Home</Link>
 
+          <hr />
+
+          {
+            error
+              ? <p className={styles.error}>{error.status} - {error.statusText}</p>
+              : null
+          }
+
+          {
+            loading
+              ? <p>
+                  <i className={`${fa.fa} ${fa["fa-spinner"]} ${fa["fa-spin"]} ${styles.spinner}`} />
+                  Loading...
+                </p>
+              : null
+          }
+
+          {
+            photos.length == 0 && !loading
+            ? <button type="button" onClick={::this.loadPhotos}>
+                Load Photos
+              </button>
+            : null
+          }
+
           <PhotoList photos={photos} />
+
         </div>
       </DocumentTitle>
     );
