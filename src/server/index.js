@@ -39,6 +39,7 @@ if (server.get("env") === "development") {
 // import render from "./render.generated.js";
 // server.use(render);
 
+// TODO: remove this when server rendering works again
 server.use((req, res, next) => { // eslint-disable-line no-unused-vars
   res.set("Content-Type", "text/html");
   res.send(fs.readFileSync(path.resolve(__dirname, "../../public/index.html")));
