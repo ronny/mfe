@@ -5,4 +5,4 @@ require("babel/register")({
   sourceMaps: true
 });
 
-module.exports = require("./dev.config");
+module.exports = require("./config");

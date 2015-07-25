@@ -4,10 +4,10 @@
   "description": "A template for modern front-end projects.",
   "scripts": {
     "start": "NODE_ENV=production node index",
-    "test": "karma start config/karma/karma.conf.es5.js",
+    "test": "NODE_ENV=test karma start config/karma/karma.conf.es5.js",
     "dev": "NODE_ENV=development nodemon index",
-    "builddev": "webpack --stats --progress --config ./config/webpack/dev.config.es5.js",
-    "build": "webpack --stats --progress --config ./config/webpack/prod.config.es5.js",
+    "builddev": "NODE_ENV=development webpack -d --color --stats --progress --config ./webpack/config.es5.js",
+    "build": "NODE_ENV=production webpack -p --color --stats --progress --config ./webpack/config.es5.js",
     "lint": "eslint src"
   },
   "repository": {

@@ -1,5 +1,4 @@
 import RewireWebpackPlugin from "rewire-webpack";
-import webpackSharedConfig from "../../webpack/shared";
 
 export default function(config) {
   const obj = {
@@ -37,7 +36,14 @@ export default function(config) {
       // webpack watches test dependencies
       module: {
         loaders: [
-          webpackSharedConfig.loaders.js,
+          {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loaders: [
+              "react-hot",
+              "babel?optional[]=runtime&stage=0&cacheDirectory"
+            ],
+          },
           {
             // We don't care about loading other asset types in tests
             test: /\.(css|sass|jpg|png|svg|gif|ico|eot|ttf|woff2?)$/,
@@ -46,7 +52,10 @@ export default function(config) {
         ],
       },
       devtool: "inline-source-map",
-      resolve: webpackSharedConfig.resolve,
+      resolve: {
+        extensions: ["", ".js"],
+        modulesDirectories: ["src", "node_modules"],
+      },
       progress: true,
       cache: true,
       plugins: [

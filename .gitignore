@@ -1,6 +1,7 @@
 .env
 node_modules
 public/assets
-webpack-stats.json
+asset-manifest.json
 *.generated.js
 *.log
+*.map
